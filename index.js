@@ -20,6 +20,10 @@ const calcNewVelocity = (acceleration, velocity, duration) => {
     throw new Error('Invalid input parameter for calcNewVelocity function');
   }
   
+// Calculate new velocity based on acceleration
+const newVelocity = velocity + (acceleration * duration);
+
+return newVelocity;
 }
 
 //calcultes new distance
