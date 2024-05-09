@@ -14,8 +14,14 @@ const fuelAmount = { value: 5000, unit: 'kg' }; // remaining fuel (kg)
 const fuelBurnRate = { value: 0.5, unit: 'kg/s' };// fuel burn rate (kg/s)
 
 
-const d2 = d + (vel*time) //calcultes new distance
-const rf = fbr*time //calculates remaining fuel
+//calcultes new distance
+const velocityInMetersPerSecond = (velocity.value * 1000) / 3600; // converting km/h to m/s
+const newDistanceInMeters = initialDistance.value + (velocityInMetersPerSecond * duration.value);
+const newDistanceInKilometers = newDistanceInMeters / 1000;
+
+//calculates remaining fuel
+const reamainingFuelInKilograms = fuelAmount.value - (fuelBurnRate.value * duration.value);
+
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
