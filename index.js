@@ -29,7 +29,7 @@ return newVelocity;
 // Validating input pararmeters
 if (velocity.unit !== 'km/h' || acceleration.unit !== 'm/s^2' || duration.unit !== 's' ||
   initialDistance.unit !== 'km' || fuelAmount.unit !== 'kg' || fuelBurnRate.unit !== 'kg/s') {
-    throw new Erro ('Invalid unit of measurement for one or more input parameters');
+    throw new Error ('Invalid unit of measurement for one or more input parameters');
   }
 
 //calcultes new distance
