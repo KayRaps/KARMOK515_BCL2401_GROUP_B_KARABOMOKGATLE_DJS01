@@ -26,6 +26,12 @@ const newVelocity = velocity + (acceleration * duration);
 return newVelocity;
 }
 
+// Validating input pararmeters
+if (velocity.unit !== 'km/h' || acceleration.unit !== 'm/s^2' || duration.unit !== 's' ||
+  initialDistance.unit !== 'km' || fuelAmount.unit !== 'kg' || fuelBurnRate.unit !== 'kg/s') {
+    throw new Erro ('Invalid unit of measurement for one or more input parameters');
+  }
+
 //calcultes new distance
 const velocityInMetersPerSecond = (velocity.value * 1000) / 3600; // converting km/h to m/s
 const newDistanceInMeters = initialDistance.value + (velocityInMetersPerSecond * duration.value);
