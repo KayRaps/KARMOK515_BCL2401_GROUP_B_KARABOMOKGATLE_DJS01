@@ -13,6 +13,14 @@ const initialDistance = { value: 0, unit: 'km' }; // distance (km)
 const fuelAmount = { value: 5000, unit: 'kg' }; // remaining fuel (kg)
 const fuelBurnRate = { value: 0.5, unit: 'kg/s' };// fuel burn rate (kg/s)
 
+// Function to calculate new velocity based on acceleration
+const calcNewVelocity = (acceleration, velocity, duration) => {
+  // Validate input parameters
+  if (typeof acceleration !== 'number' || typeof velocity !== 'number' || typeof duration !== 'number') {
+    throw new Error('Invalid input parameter for calcNewVelocity function');
+  }
+  
+}
 
 //calcultes new distance
 const velocityInMetersPerSecond = (velocity.value * 1000) / 3600; // converting km/h to m/s
